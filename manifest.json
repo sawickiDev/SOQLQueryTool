@@ -1,0 +1,31 @@
+{
+    //manifest spec: http://developer.chrome.com/extensions/manifest.html
+    //required
+    "name": "SOQL Query Tool",
+    "version": "0.1",
+    "manifest_version": 2,
+
+    //recommended
+    "description": "Use this extension to perform SOQL queries faster from any page context also using pre-defined and and previously used queries",
+    "icons": {
+        "19": "images/icon_19.png",
+        "38": "images/icon_38.png",
+        "128": "images/icon_128.png"
+    },
+
+    //required
+    "browser_action": {
+        "default_title": "SOQL Query Tool",
+        "default_icon": {
+            "19": "images/icon_19.png",
+            "38": "images/icon_38.png"
+        },
+        "default_popup": "html/main.html"
+    },
+
+    "content_scripts": [{
+        "matches": ["https://steveq-dev-ed.my.salesforce.com/*"],
+        "css": ["css/widget.css"],
+        "js": ["js/widget.js", "js/jquery-3.3.1.min.js"]
+    }]
+}
